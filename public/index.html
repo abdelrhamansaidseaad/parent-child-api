@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام ربط الأبناء بالآباء</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/images/logo.png" alt="شعار النظام" class="logo">
+      <h1>نظام ربط الأبناء بالآباء</h1>
+    </header>
+
+    <main>
+      <div class="auth-forms">
+        <!-- نموذج تسجيل الدخول -->
+        <form id="loginForm" class="form">
+          <h2>تسجيل الدخول</h2>
+          <div class="form-group">
+            <label for="loginUsername">اسم المستخدم</label>
+            <input type="text" id="loginUsername" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">كلمة المرور</label>
+            <input type="password" id="loginPassword" required>
+          </div>
+          <button type="submit" class="btn">دخول</button>
+        </form>
+
+        <!-- لوحة التحكم -->
+        <div id="dashboard" class="dashboard hidden">
+          <div class="user-info">
+            <h2 id="welcomeMessage">مرحباً، <span id="username"></span></h2>
+            <p id="userRole"></p>
+          </div>
+
+          <!-- لوحة الأب -->
+          <div id="parentPanel" class="panel hidden">
+            <button id="generateCodeBtn" class="btn">إنشاء كود ربط</button>
+            <div id="codeDisplay" class="code-display hidden">
+              <p>كود الربط: <span id="linkCode"></span></p>
+              <p>ينتهي في: <span id="expiryDate"></span></p>
+            </div>
+          </div>
+
+          <!-- لوحة الابن -->
+          <div id="childPanel" class="panel hidden">
+            <form id="linkParentForm" class="form">
+              <h3>ربط الحساب بالأب</h3>
+              <div class="form-group">
+                <label for="parentCode">أدخل كود الربط</label>
+                <input type="text" id="parentCode" required>
+              </div>
+              <button type="submit" class="btn">ربط الحساب</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2023 جميع الحقوق محفوظة</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
